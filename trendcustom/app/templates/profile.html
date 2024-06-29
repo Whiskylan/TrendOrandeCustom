@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-md mx-auto my-8 px-4 py-6 bg-white rounded shadow-md overflow-hidden">
+    <h2 class="text-2xl font-semibold text-orange-600 mb-4">Profile</h2>
+    <p class="text-gray-700">Имя пользователя: {{ user.username }}</p>
+    <div class="mt-4">
+        <p class="text-orange-500 font-medium">Your keyboards:</p>
+        {% for keyboard in keyboards %}
+            <div class="border-b border-gray-200 py-4">
+                <h3 class="text-lg font-semibold text-orange-600">{{ keyboard.name }}</h3>
+                <a href="{% url 'detail_keyboard' keyboard.id %}" class="inline-block text-center text-orange-500 hover:text-orange-700 mt-2">Detail</a>
+            </div>
+        {% empty %}
+            <p class="py-4 text-gray-700">Вы еще не добавили никаких клавиатур.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

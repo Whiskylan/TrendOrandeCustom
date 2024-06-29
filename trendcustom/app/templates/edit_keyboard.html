@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<pre>{{ session_data }}</pre>
+<div class="container mx-auto px-4 py-8">
+    <h2 class="text-2xl font-bold text-orange-500 mb-0" style="text-align: center">Edit Completed Keyboard</h2>
+    <form method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 space-y-4 max-w-xl mx-auto mt-4">
+        {% csrf_token %}
+        {{ form.name.label_tag }} {{ form.name }}
+        {{ form.user }}
+        <br>
+        {{ form.case.label_tag }} {{ form.case }}
+        <a href="{% url 'case_page' %}">Change case</a>
+        <br>
+        {{ form.plata.label_tag }} {{ form.plata }}
+        <a href="{% url 'pcb_page' %}">Change plata</a>
+        <br>
+        {{ form.plate.label_tag }} {{ form.plate }}
+        <a href="{% url 'plate_page' %}">Change plate</a>
+        <br>
+        {{ form.stabilizer.label_tag }} {{ form.stabilizer }}
+        <a href="{% url 'stabs_page' %}">Change stabs</a>
+        <br>
+        {{ form.switch.label_tag }} {{ form.switch }}
+        <a href="{% url 'switch_page' %}">Change switch</a>
+        <br>
+        {{ form.keycap.label_tag }} {{ form.keycap }}
+        <a href="{% url 'keycap_page' %}">Change keycap</a>
+        <button type="submit" class="w-full py-2 px-4 mt-4 bg-orange-500 text-white font-semibold rounded hover:bg-orange-600 block w-max">Edit Keyboard</button>
+    </form>
+</div>
+{% endblock %}

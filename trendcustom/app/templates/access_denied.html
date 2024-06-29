@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+    <div style="text-align: center;">
+        <h2>Ошибка доступа</h2>
+        <p>Извините, но у вас нет разрешения на просмотр этой страницы.</p>
+        <br>
+        <a href="{% url 'home' %}" class="text-orange-600 font-bold underline hover:text-orange-800">Вернуться на главную</a>
+    </div>
+<br>
+{% endblock %}

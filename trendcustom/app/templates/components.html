@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<br>
+    <div class="max-w-screen-xl mx-auto p-6 bg-white rounded-lg shadow-md">
+
+        <h1 class="text-3xl font-bold text-center text-orange-500 mb-8">Components</h1>
+
+        <nav class="container mx-auto px-4">
+            <ul class="flex flex-wrap justify-center gap-4 mb-8">
+                <li><a href="{% url 'keycap_page' %}" class="text-orange-500 hover:text-orange-600">Keycaps</a></li>
+                <li><a href="{% url 'switch_page' %}" class="text-orange-500 hover:text-orange-600">Switches</a></li>
+                <li><a href="{% url 'stabs_page' %}" class="text-orange-500 hover:text-orange-600">Stabilizers</a></li>
+                <li><a href="{% url 'plate_page' %}" class="text-orange-500 hover:text-orange-600">Plates</a></li>
+                <li><a href="{% url 'pcb_page' %}" class="text-orange-500 hover:text-orange-600">PCB</a></li>
+                <li><a href="{% url 'case_page' %}" class="text-orange-500 hover:text-orange-600">Cases</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+{% endblock %}
